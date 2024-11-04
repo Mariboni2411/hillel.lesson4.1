@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+def remove_chars(input_string, chars_to_remove):
+    # Перетворюємо список символів у множину 
+    chars_set = set(chars_to_remove)
+    # Формуємо новий рядок, символі в яких немає у множині
+    result = ''.join(char for char in input_string if char not in chars_set)
+    return result
+
+#використання
+output = remove_chars("hello world", ['l', 'd'])
+print(output) 
+ # Виведе "heo wor"

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+def remove_chars(input_string, chars_to_remove):
+    result = ''.join(char for char in input_string if char not in chars_to_remove)
+    return result
+
+#використання
+input_string = input("Введіть рядок: ")
+chars_to_remove = list(input("Введіть символи для видалення (без пробілів): "))
+
+# Викликаємо функцію та результат
+print(remove_chars(input_string, chars_to_remove))
