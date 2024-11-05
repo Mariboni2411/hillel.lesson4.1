@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Таблиця Піфагора</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+    table, th, td {
+      border: 1px solid black;
+      padding: 8px;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <h1> Таблиця Піфагора (10×10)</h1>
+  <div id="pifagorTable"></div>
+
+  <script>
+    function createMultiplicationTable(size) {
+      const table = document.createElement("table");
+
+      for (let row = 1; row <= size; row++) {
+        const tr = document.createElement("tr");
+
+        for (let col = 1; col <= size; col++) {
+          const cell = document.createElement(row === 1 || col === 1 ? "th" : "td");
+          cell.textContent = row * col;
+          tr.appendChild(cell);
+        }
+
+        table.appendChild(tr);
+      }
+
+      return table;
+    }
+
+    const tableContainer = document.getElementById("pifagorTable");
+    tableContainer.appendChild(createMultiplicationTable(10));
+  </script>
+</body>
+</html>
