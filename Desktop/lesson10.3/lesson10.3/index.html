@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+let contactBook = {
+    contacts: [
+      { name: "Марія", phone: "+380992807267", email: "maria@example.com" },
+      { name: "Aнна", phone: "+3801234567789", email: "anna@example.com" }
+    ],
+  
+    // контакту за ім'ям
+    findContact: function(name) {
+      return this.contacts.find(contact => contact.name.toLowerCase() === name.toLowerCase()) || "Контакт не знайдено";
+    },
+  
+    // додавання нового контакту
+    addContact: function(name, phone, email) {
+      // преревірка існує контакт з таким ім'ям
+      const existingContact = this.findContact(name);
+      if (typeof existingContact === 'object') {
+        return "контакт з таким ім'ям вже існує";
+      }
+      this.contacts.push({ name, phone, email });
+      return "контакт успішно додано ";
+    }
+  };
+  
+  // новий контакт
+  console.log(contactBook.addContact("Марія", "+380555555555", "maria@example.com"));
+  
+  // пошук за ім'ям
+  console.log(contactBook.findContact("Олена"));
+  
+  // спроба додати з існуючим ім'ям
+  console.log(contactBook.addContact("Марія", "+380992807267", "maria@example.com"));
