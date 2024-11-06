@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        .task-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .task-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .task-item button {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>список</h2>
+
+<!--список-->
+<ul class="task-list" id="taskList">
+    <li class="task-item">1<button class="delete-btn">видалити</button></li>
+    <li class="task-item">2<button class="delete-btn">видалити</button></li>
+    <li class="task-item">3<button class="delete-btn">видалити</button></li>
+</ul>
+
+<!-- поле нового завдання та кнопка додавання -->
+<input type="text" id="newTaskInput" placeholder="додати нове завдання">
+<button id="addTaskButton">додати</button>
+
+<script>
+    // посилання на елементи
+    const taskList = document.getElementById("taskList");
+    const newTaskInput = document.getElementById("newTaskInput");
+    const addTaskButton = document.getElementById("addTaskButton");
+
+    //  обробник подій для списку 
+    taskList.addEventListener("click", function(event) {
+        // елемент з класом 'delete-btn'
+        if (event.target.classList.contains("delete-btn")) {
+            // видаляємо батьківський елемент "Видалити"
+            const taskItem = event.target.parentElement;
+            taskList.removeChild(taskItem);
+        }
+    });
+
+    // додавання нового завдання
+    addTaskButton.addEventListener("click", function() {
+        // значення з текстового поля
+        const taskText = newTaskInput.value.trim();
+
+        // перевірка
+        if (taskText !== "") {
+            //  новий елемент 
+            const taskItem = document.createElement("li");
+            taskItem.classList.add("task-item");
+            taskItem.innerHTML = ${taskText} <button class="delete-btn">видалити</button>;
+
+            // додавання нового завдання
+            taskList.appendChild(taskItem);
+
+            // очищуємо 
+            newTaskInput.value = "";
+        } else {
+            alert("введіть текст завдання!");
+        }
+    });
+</script>
+
+</body>
+</html>
