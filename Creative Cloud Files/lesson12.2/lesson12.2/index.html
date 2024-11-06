@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        .button-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<h2></h2>
+
+<!-- контейнер з кнопками -->
+<div class="button-container" id="buttonContainer">
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+</div>
+
+<script>
+    //контейнер кнопок
+    const buttonContainer = document.getElementById("buttonContainer");
+
+    //обробник подій до контейнера
+    buttonContainer.addEventListener("click", function(event) {
+        // перевіряємо,елемент "button"
+        if (event.target.tagName === "BUTTON") {
+            // текст кнопки і виводимо повідомлення
+            alert("клікнуто на кнопку: " + event.target.textContent);
+        }
+    });
+</script>
+
+</body>
+</html>
