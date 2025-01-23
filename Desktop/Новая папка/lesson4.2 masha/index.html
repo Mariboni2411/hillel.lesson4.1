@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>перевірка тризначного числа</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>перевірка </h1>
+    <label for="number">введіть тризначне число:</label>
+    <input type="text" id="number" maxlength="3" placeholder="Наприклад: 123">
+    <button onclick="checkNumber()">перевірити</button>
+
+    <div class="result" id="result"></div>
+
+    <script>
+        function checkNumber() {
+            const number = document.getElementById('number').value;
+            const resultDiv = document.getElementById('result');
+
+            // перевірка: чи це тризначне число
+            if (number.length === 3 && !isNaN(number)) {
+                const a = number[0];
+                const b = number[1];
+                const c = number[2];
+
+                // перевірка всі цифри однакові
+                const allEqual = (a === b && b === c);
+
+                // перевірка хоча б дві однакові цифри
+                const anyEqual = (a === b  b === c  a === c);
+
+                // результат
+                resultDiv.innerHTML = `
+                    <p>Чи всі цифри однакові? <strong>${allEqual ? "Так" : "Ні"}</strong></p>
+                    <p>Чи є серед цифр однакові? <strong>${anyEqual ? "Так" : "Ні"}</strong></p>
+                `;
+            } else {
+                resultDiv.innerHTML = <p style="color: red;">введіть коректне 3 число!</p>;
+            }
+        }
+    </script>
+</body>
+</html>
