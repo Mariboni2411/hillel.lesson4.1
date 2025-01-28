@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dollar to UAH</title>
+</head>
+<body>
+  <h1>Вартість у гривнях:</h1>
+  <ul id="result"></ul>
+
+  <script>
+    const dollarRate = 26; // Курс долара
+    const resultList = document.getElementById('result');
+
+    for (let dollars = 10; dollars <= 100; dollars += 10) {
+      const priceInUAH = dollars * dollarRate;
+      const listItem = document.createElement('li');
+      listItem.textContent = ${dollars} доларів = ${priceInUAH} гривень;
+      resultList.appendChild(listItem);
+    }
+  </script>
+</body>
+</html>
