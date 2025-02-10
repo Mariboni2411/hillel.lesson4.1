@@ -1,0 +1,14 @@
+{
+    "destination": [
+      { "id": 1, "value": 70, "label": "Atlanta" },
+      { "id": 2, "value": 149, "label": "Boston" },
+      { "id": 3, "value": 5034, "label": "Boston" },
+      { "id": 4, "value": 34501, "label": "Celebration" },
+      { "id": 5, "value": 40418, "label": "Edgewood" },
+      { "id": 6, "value": 39505, "label": "Gotha" }
+    ],
+    "hotels": []
+  }
+
+export const history = createReduxHistory(store);
+export default store;
